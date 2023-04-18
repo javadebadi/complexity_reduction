@@ -6,6 +6,12 @@ class NaturalNumbersSum:
 
     In this module natural numbers are positive integers and 0, even though
     the 0 is not a natural number by formal definitions.
+
+    These functions use the mathematical formulas to reduce complexity of sum
+    operations on natural numbers. 
+    Without these formulas one needs to use for loop to find the sums and 
+    therefore the time complexity of operations is of O(n). However, with these
+    analytical formulas the time complexity reduces to O(1).
     """
 
     @staticmethod
