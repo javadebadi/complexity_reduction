@@ -52,4 +52,32 @@ class NaturalNumbersSum:
 
     @staticmethod
     def sum_from_m_to_n(m, n):
-        ...
+        """Sum of natural numbers from m to n.
+
+        The m should be smaller than n, but even if it is not, the function
+        will automatically handle it. So finally the function will return
+        sum of natural number between min(m,n) to max(m, n).
+
+        To increase the performance of the function we use the following
+        mathematical formula:
+
+        m + ... + n = (n - m + 1)(n + m) / 2   
+
+        There is a technical issue with how Python calculates the float operations:
+        >>> x = 10000000000000001
+        >>> x == (x * (x) ) ** (1/2)
+        False
+
+        We need to consider this issue in solving this problem.
+
+        Algorithm Complexity
+        ------------
+        Time Complexity: O(1)
+        Memory Complexity: O(1)
+        """
+        NaturalNumbersSum._verify_natural_number(m)
+        NaturalNumbersSum._verify_natural_number(n)
+        if NaturalNumbersSum._is_multiplication_of_large_numbers(n + m , n - m + 1):
+            return int((Fraction(n)-Fraction(m) + 1) * (Fraction(n) + Fraction(m)) / Fraction(2))
+        else:
+            return (n - m + 1) * (n + m) / 2
